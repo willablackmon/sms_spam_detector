@@ -10,15 +10,16 @@ Develop a Gradio applcation powered by a Support Vector Classification (SVC) mod
 
 Refactor code from an SMS text classification solution into a function that constructs a linear Support Vector Classification (SVC) model.
 
-Create a Gradio app to host the application, enabling users to test text messages. 
+Create a Gradio app to host the application, enabling users to test text messages.
 
 ### Data:
 
 Git Repo: sms_spam_detector
 
-s\Sample labeled data, with text_message and label (ham or spam)
+Sample labeled data, with text_message and label (ham or spam):
 
-    ![1727891586124](image/README/1727891586124.png)	
+    ![1727903835661](image/README/1727903835661.png)
+
 
 ### Steps:
 
@@ -26,14 +27,14 @@ s\Sample labeled data, with text_message and label (ham or spam)
 
 Takes `sms_text_clf` test data, sets X (feature), y (target data), splits data into training and test sets, and returns the `text_clf` object, which is a `Pipeline` object.
 
-The pipeline streamline the series of data processing steps including: 
+The pipeline streamline the series of data processing steps including:
 
 * **TF-IDF Vectorization** : converts the text data into numerical features using Term Frequency-Inverse Document Frequency (TF-IDF), which helps in transforming the text into a format that the machine learning model can understand `stop_words='english'` parameter removes common English words that are unlikely to be useful for classification.
 * **Linear Support Vector Classification (SVC)** : a Support Vector Machine (SVM) classification model with a linear kernel, that has been trained on classifier that has been trained on the transformed training data and is used to classify the text messages
 
-    ![1727890503064](image/README/1727890503064.png)
+      ![1727903906335](image/README/1727903906335.png)
 
-Function  `sms_classification` returns a fitted pipeline model for SMS classification (`text_clf` object, which is a `Pipeline` ) that includes the TF-IDF Vectorization to convert text messages into numerical features and a Linear Support Vector Classification (SVC) classification model, trained on the transformed training data.
+NOTE: *Function  `sms_classification` returns a fitted pipeline model for SMS classification (`text_clf` object, which is a `Pipeline` ) that includes the TF-IDF Vectorization to convert text messages into numerical features and a Linear Support Vector Classification (SVC) classification model, trained on the transformed training data.*
 
 ##### SMS Prediction Function
 
@@ -43,31 +44,24 @@ It calles the Pipline predict method, then returns a message indicating whether 
 
     `prediction = text_clf.predict([text])`
 
-*Note about the Pipeline call from the sms_prediction function:*
 
-*The 'predict' method of the Pipeline (and many other scikit-learn models) expects an iterable (eg. list, array) as it is designed to handle batch predictions. It can process multiple text documents at once, even if you're only passing a single text message.*
+NOTE: *The 'predict' method of the Pipeline (and many other scikit-learn models) expects an iterable (eg. list, array) as it is designed to handle batch predictions. It can process multiple text documents at once, even if you're only passing a single text message.*
 
 * *The method is designed to handle both single & multiple inputs in a consistent manner.*
 * *By always expecting an iterable, the method can uniformly process the input data.*
 * *Batch Processing: ML models often make predictions on multiple samples at once; expecting an iterable allows the model to efficiently handle batch predictions.*
 * *Data Transformation: The pipeline includes steps like TfidfVectorizer, which are designed to transform a collection of text documents into numerical features.*
 
-
 ### Gradio Interface Application
 
-Create a web-based interface to allow users to enter a text message and get a prediction on whether it is spam or not. 
+Create a web-based interface to allow users to enter a text message and get a prediction on whether it is spam or not.
 
 Sample outputs:
 
-    ![1727895619132](image/README/1727895619132.png)
-
-    ![1727895653995](image/README/1727895653995.png)
+    ![1727903929648](image/README/1727903929648.png)
 
 
-
-
-
-
+    ![1727903944192](image/README/1727903944192.png)
 
 ```markdown
 
