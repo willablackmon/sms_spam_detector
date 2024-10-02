@@ -2,26 +2,26 @@
 
 ## Gradio SMS Classification Function Powered by a Support Vector Classification (SVC) Model
 
-### Description:
+### I. Description:
 
 Develop a Gradio applcation powered by a Support Vector Classification (SVC) model that will provide feedback to users, indicating whether entered text is classified as spam.
 
-### Goals:
+### II. Goals:
 
 Refactor code from an SMS text classification solution into a function that constructs a linear Support Vector Classification (SVC) model.
 
 Create a Gradio app to host the application, enabling users to test text messages.
 
-### Data:
+### III. Data:
 
 Git Repo: sms_spam_detector
 
 Sample labeled data, with text_message and label (ham or spam):
 
-    ![1727903835661](image/README/1727903835661.png)
+    ![1727904700896](image/README/1727904700896.png)
 
 
-### Steps:
+### IV. Steps:
 
 ##### SMS Classification Function
 
@@ -32,7 +32,7 @@ The pipeline streamline the series of data processing steps including:
 * **TF-IDF Vectorization** : converts the text data into numerical features using Term Frequency-Inverse Document Frequency (TF-IDF), which helps in transforming the text into a format that the machine learning model can understand `stop_words='english'` parameter removes common English words that are unlikely to be useful for classification.
 * **Linear Support Vector Classification (SVC)** : a Support Vector Machine (SVM) classification model with a linear kernel, that has been trained on classifier that has been trained on the transformed training data and is used to classify the text messages
 
-      ![1727903906335](image/README/1727903906335.png)
+      ![1727904751535](image/README/1727904751535.png)
 
 NOTE: *Function  `sms_classification` returns a fitted pipeline model for SMS classification (`text_clf` object, which is a `Pipeline` ) that includes the TF-IDF Vectorization to convert text messages into numerical features and a Linear Support Vector Classification (SVC) classification model, trained on the transformed training data.*
 
@@ -52,16 +52,14 @@ NOTE: *The 'predict' method of the Pipeline (and many other scikit-learn models)
 * *Batch Processing: ML models often make predictions on multiple samples at once; expecting an iterable allows the model to efficiently handle batch predictions.*
 * *Data Transformation: The pipeline includes steps like TfidfVectorizer, which are designed to transform a collection of text documents into numerical features.*
 
-### Gradio Interface Application
+### V. Introduce Gradio Interface Application
 
 Create a web-based interface to allow users to enter a text message and get a prediction on whether it is spam or not.
 
 Sample outputs:
 
-    ![1727903929648](image/README/1727903929648.png)
-
-
-    ![1727903944192](image/README/1727903944192.png)
+    ![1727904759041](image/README/1727904759041.png)
+    ![1727904769394](image/README/1727904769394.png)
 
 ```markdown
 
