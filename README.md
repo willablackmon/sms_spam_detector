@@ -18,7 +18,7 @@ Git Repo: sms_spam_detector
 
 Sample labeled data, with text_message and label (ham or spam):
 
-    ![1727904700896](image/README/1727904700896.png)
+    ![1727905755685](image/README/1727905755685.png)
 
 
 ### IV. Steps:
@@ -32,7 +32,7 @@ The pipeline streamline the series of data processing steps including:
 * **TF-IDF Vectorization** : converts the text data into numerical features using Term Frequency-Inverse Document Frequency (TF-IDF), which helps in transforming the text into a format that the machine learning model can understand `stop_words='english'` parameter removes common English words that are unlikely to be useful for classification.
 * **Linear Support Vector Classification (SVC)** : a Support Vector Machine (SVM) classification model with a linear kernel, that has been trained on classifier that has been trained on the transformed training data and is used to classify the text messages
 
-      ![1727904751535](image/README/1727904751535.png)
+      ![1727905763396](image/README/1727905763396.png)
 
 NOTE: *Function  `sms_classification` returns a fitted pipeline model for SMS classification (`text_clf` object, which is a `Pipeline` ) that includes the TF-IDF Vectorization to convert text messages into numerical features and a Linear Support Vector Classification (SVC) classification model, trained on the transformed training data.*
 
@@ -58,8 +58,15 @@ Create a web-based interface to allow users to enter a text message and get a pr
 
 Sample outputs:
 
-    ![1727904759041](image/README/1727904759041.png)
-    ![1727904769394](image/README/1727904769394.png)
+    ![1727905903449](image/README/1727905903449.png)
+
+
+![1727905910525](image/README/1727905910525.png)
+
+    
+
+  
+    
 
 ```markdown
 
